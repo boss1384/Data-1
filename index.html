@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ag wada Data</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: system-ui, sans-serif;
+            background: #111;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 10px;
+        }
+        .mobile-frame {
+            width: 380px;
+            height: 720px;
+            background: #0a0a0a;
+            border-radius: 45px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.8);
+            position: relative;
+            border: 12px solid #1a1a1a;
+        }
+        .status-bar { padding: 10px 20px; color: white; font-size: 13px; display: flex; justify-content: space-between; background: #0a0a0a; }
+        .header { display: flex; justify-content: space-between; padding: 15px 20px; color: white; }
+        .user-info { display: flex; align-items: center; gap: 12px; }
+        .avatar { width: 42px; height: 42px; background: #333; border-radius: 50%; font-size: 24px; display: flex; align-items: center; justify-content: center; }
+        .hi { font-weight: 600; }
+        .question { color: #bbb; font-size: 14px; }
+        .balance-card {
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            margin: 10px 20px;
+            padding: 20px;
+            border-radius: 20px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .balance-amount { font-size: 32px; font-weight: 700; margin-top: 4px; }
+        .fund-btn {
+            background: rgba(255,255,255,0.25);
+            border: none;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .services { padding: 15px 20px; }
+        .section-title { color: white; margin-bottom: 15px; font-size: 17px; }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+        .service-item {
+            text-align: center;
+            color: white;
+            font-size: 12.5px;
+            cursor: pointer;
+        }
+        .icon {
+            width: 56px;
+            height: 56px;
+            background: #1f2937;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            margin: 0 auto 6px;
+        }
+        .verify-banner {
+            margin: 15px 20px;
+            background: white;
+            border-radius: 16px;
+            padding: 15px;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            cursor: pointer;
+        }
+        .check-badge {
+            background: #2563eb;
+            color: white;
+            width: 62px;
+            height: 62px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+        }
+        .bottom-nav {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: #111;
+            display: flex;
+            justify-content: space-around;
+            padding: 12px 0 8px;
+            border-top: 1px solid #333;
+            color: #888;
+        }
+        .nav-item {
+            text-align: center;
+            font-size: 11px;
+            cursor: pointer;
+        }
+        .nav-item.active { color: #60a5fa; }
+        .nav-icon { font-size: 22px; display: block; margin-bottom: 3px; }
+    </style>
+</head>
+<body>
+    <div class="mobile-frame">
+        <div class="status-bar">
+            <div class="time">12:55 AM</div>
+            <div class="status-icons">4G 84%</div>
+        </div>
+
+        <div class="header">
+            <div class="user-info">
+                <div class="avatar">👤</div>
+                <div>
+                    <p class="hi">Hi Professor!</p>
+                    <p class="question">What would you like to do?</p>
+                </div>
+            </div>
+            <div class="bell">🛎️</div>
+        </div>
+
+        <div class="balance-card">
+            <div>
+                <p class="balance-label">Available Balance <span class="eye">👁️</span></p>
+                <p class="balance-amount">₦0.00</p>
+            </div>
+            <button class="fund-btn">Fund Wallet</button>
+        </div>
+
+        <div class="services">
+            <h2 class="section-title">Services</h2>
+            <div class="services-grid">
+                <div class="service-item"><div class="icon">📞</div><p>Airtime</p></div>
+                <div class="service-item"><div class="icon">🌐</div><p>Data</p></div>
+                <div class="service-item"><div class="icon">🔢</div><p>Recharge Pins</p></div>
+                <div class="service-item"><div class="icon">🔄</div><p>Data Pin</p></div>
+                <div class="service-item"><div class="icon">⚡</div><p>Electricity</p></div>
+                <div class="service-item"><div class="icon">📦</div><p>Exam PIN</p></div>
+                <div class="service-item"><div class="icon">📺</div><p>Cable TV</p></div>
+                <div class="service-item"><div class="icon">👥</div><p>Refer a friend</p></div>
+            </div>
+        </div>
+
+        <div class="verify-banner">
+            <div class="check-badge">✅</div>
+            <div>
+                <h3>VERIFY YOUR DETAILS</h3>
+                <p>Verify your details to get permanent account for your wallet funding</p>
+            </div>
+        </div>
+
+        <div class="bottom-nav">
+            <div class="nav-item active"><span class="nav-icon">🏠</span><span>Home</span></div>
+            <div class="nav-item"><span class="nav-icon">💰</span><span>Pricing</span></div>
+            <div class="nav-item"><span class="nav-icon">📜</span><span>History</span></div>
+            <div class="nav-item"><span class="nav-icon">👤</span><span>Profile</span></div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Eye Toggle
+            const eye = document.querySelector('.eye');
+            const amount = document.querySelector('.balance-amount');
+            let visible = true;
+            if (eye) eye.addEventListener('click', () => {
+                visible = !visible;
+                amount.textContent = visible ? '₦0.00' : '••••••';
+            });
+
+            // Fund Wallet Button
+            document.querySelectorAll('.fund-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    alert("💰 Fund Wallet Clicked!\n\nWorking successfully!");
+                });
+            });
+
+            // Services
+            document.querySelectorAll('.service-item').forEach(item => {
+                item.addEventListener('click', () => {
+                    alert(`Selected: ${item.textContent.trim()}`);
+                });
+            });
+
+            // Verify Banner
+            document.querySelector('.verify-banner').addEventListener('click', () => {
+                alert("✅ Verification Page");
+            });
+        });
+    </script>
+</body>
+</html>
